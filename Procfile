@@ -1,0 +1,1 @@
+web: gunicorn indiepk_project.wsgi --log-file -

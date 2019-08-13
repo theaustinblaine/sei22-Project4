@@ -20,7 +20,7 @@ class Merchandise(models.Model):
     def __str__(self):
         return self.name
 
-class Shows(models.Model):
+class Show(models.Model):
     flyer_url = models.CharField(max_length=500, blank=True)
     date = models.CharField(max_length=100)
     venue = models.CharField(max_length=200)

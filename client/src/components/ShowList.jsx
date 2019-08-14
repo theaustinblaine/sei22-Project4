@@ -32,7 +32,7 @@ export default class ShowList extends Component {
         <div>
             <h3>Shows:</h3>
             {this.state.showsList.map(show => (
-                <Link to={`/api/v1/shows/${show.id}`}>
+                <Link to={`/shows/${show.id}`}>
                     <img src={show.flyer_url} alt="" width="150" height="200" />
                 </Link>
             ))}

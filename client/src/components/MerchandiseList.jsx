@@ -32,7 +32,7 @@ export default class MerchandiseList extends Component {
         <div>
             <h3>Merchandise:</h3>
             {this.state.merchandiseList.map(merch => (
-                <Link to={`/api/v1/merchandise/${merch.id}`}>
+                <Link to={`/merchandise/${merch.id}`}>
                     <img src={merch.photo_url} alt={merch.name} width="150" height="" />
                 </Link>
             ))}

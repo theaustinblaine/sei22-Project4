@@ -7,16 +7,22 @@ export default class Artist extends Component {
     state = {
         error: '',
         artist: {},
+        shows: [],
+        merchandise: []
     }
 
     componentDidMount() {
-        this.fetchArtist()
+        this.fetchArtist(this.props.match.params.id)
     }
 
     fetchArtist = async () => {
         try {
             const res = await axios.get(`/api/v1/artists/${this.props.match.params.id}/`)
-            this.setState({artist: res.data})
+            this.setState({
+                artist: res.data,
+                shows: res.data.shows,
+                merchandise: res.data.merchandise
+            })
         }
         catch (err) {
             console.log(err)

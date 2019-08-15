@@ -25,6 +25,7 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={ArtistList}/>
                         <Route path="/artist/new" component={ArtistForm} />
+                        <Route path="/artist/edit" component={ArtistForm} />
                         <Route path="/artist/:id/shows/new" component={ShowForm} />
                         <Route path="/artist/:id/shows/:id" component={ShowDetail} />
                         <Route path="/artist/:id/merchandise/new" component={MerchandiseForm} />

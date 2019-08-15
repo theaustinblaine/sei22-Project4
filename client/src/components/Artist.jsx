@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import MerchandiseList from './MerchandiseList.jsx'
 import ShowList from './ShowList.jsx';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 export default class Artist extends Component {
     state = {
@@ -54,6 +54,7 @@ export default class Artist extends Component {
             <p>{this.state.artist.location}</p>
             <img src={this.state.artist.photo_url} alt={this.state.artist.name} width="450" />
             <p>{this.state.artist.bio}</p>
+            <Link to="/artist/edit">Edit this Artist Listing</Link>
             <button onClick={this.handleDeleteArtist}>Delete this Artist Listing</button>
             <MerchandiseList 
                 artist={this.state.artist}

@@ -38,6 +38,7 @@ export default class ShowList extends Component {
             {this.state.showsList.map(show => (
                 <Link to={`/shows/${show.id}`}>
                     <img src={show.flyer_url} alt="" width="150" height="200" />
+                    <p>{show.date}</p>
                 </Link>
             ))}
             </div>

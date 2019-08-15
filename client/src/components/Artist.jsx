@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import MerchandiseList from './MerchandiseList.jsx'
 import ShowList from './ShowList.jsx';
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect} from 'react-router-dom'
 
 export default class Artist extends Component {
     state = {
@@ -10,7 +10,8 @@ export default class Artist extends Component {
         artist: {},
         shows: [],
         merchandise: [],
-        redirectToHome: false
+        redirectToHome: false,
+        isEditFormDisplayed: false
     }
 
     componentDidMount() {
@@ -41,6 +42,32 @@ export default class Artist extends Component {
         })
     }
 
+    handleToggleEditForm = () => {
+        this.setState({
+            isEditFormDisplayed: true
+        })
+    }
+
+    handleChange = (evt) => {
+        let copiedArtist = {...this.state.artist}
+
+        copiedArtist[evt.target.name] = evt.target.value
+        this.setState({
+            artist: copiedArtist
+        })
+    }
+
+    handleSubmit = (evt) => {
+        evt.preventDefault()
+
+        axios.put(`/api/v1/artists/${this.state.artist.id}/`, this.state.artist)
+            .then(() => {
+                this.setState({
+                    isEditFormDisplayed: false
+                })
+            })
+    }
+
     render() {
         if (this.state.error){
             return <div>{this.state.error}</div>
@@ -49,12 +76,72 @@ export default class Artist extends Component {
             return <Redirect to="/" />
         }
         return (
-        <div>
+        this.state.isEditFormDisplayed
+        ?<div>
+            <h3>Artist Edit Form</h3>
+            <form onSubmit={this.handleSubmit}>
+                <div>
+                    <label htmlFor="artist-name">Artist Name:</label>
+                    <input 
+                        id="artist-name"
+                        type="text"
+                        name="name"
+                        onChange={this.handleChange}
+                        value={this.state.artist.name}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="artist-photo">Photo URL:</label>
+                    <input 
+                        id="artist-photo"
+                        type="text"
+                        name="photo_url"
+                        onChange={this.handleChange}
+                        value={this.state.artist.photo_url}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="artist-location">Location:</label>
+                    <input 
+                        id="artist-location"
+                        type="text"
+                        name="location"
+                        onChange={this.handleChange}
+                        value={this.state.artist.location}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="artist-genre">Genre:</label>
+                    <input 
+                        id="artist-genre"
+                        type="text" 
+                        name="genre" 
+                        onChange={this.handleChange}
+                        value={this.state.artist.genre}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="artist-bio">Bio:</label>
+                    <textarea 
+                        name="bio" 
+                        id="artist-bio" 
+                        cols="30" 
+                        rows="10"
+                        onChange={this.handleChange}
+                    >
+                        {this.state.artist.bio}
+                    </textarea>
+                </div>
+                <input type="submit" value="Update This Artist Listing"/>
+            </form>
+        </div>
+        :<div>
             <h2>{this.state.artist.name}</h2>
             <p>{this.state.artist.location}</p>
             <img src={this.state.artist.photo_url} alt={this.state.artist.name} width="450" />
             <p>{this.state.artist.bio}</p>
-            <Link to="/artist/edit">Edit this Artist Listing</Link>
+            {/* <Link to={`/artist/${this.state.artist.id}/edit`}>Edit this Artist Listing</Link> */}
+            <button onClick={this.handleToggleEditForm}>Edit This Artist Listing</button>
             <button onClick={this.handleDeleteArtist}>Delete this Artist Listing</button>
             <MerchandiseList 
                 artist={this.state.artist}
@@ -63,6 +150,7 @@ export default class Artist extends Component {
                 artist={this.state.artist}
             />
         </div>
+
         );
     }
 }

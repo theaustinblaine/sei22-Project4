@@ -30,14 +30,19 @@ export default class ArtistList extends Component {
         return (
         <div>
             <h2>All Artists</h2>
-            {this.state.artists.map(artist => (
-                <div key={artist.id}>
-                    <Link to={`/artist/${artist.id}`} >
-                        <h3>{artist.name}</h3>
-                        <img src={artist.photo_url} alt={artist.name} width="400" />
-                    </Link>
-                </div>
-            ))}
+            <div>
+                {this.state.artists.map(artist => (
+                    <div key={artist.id}>
+                        <Link to={`/artist/${artist.id}`} >
+                            <h3>{artist.name}</h3>
+                            <img src={artist.photo_url} alt={artist.name} width="400" />
+                        </Link>
+                    </div>
+                ))}
+            </div>
+            <Link to={`/artist/new/`}>
+                Add a New Artist Listing
+            </Link>
         </div>
         );
     }

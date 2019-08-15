@@ -41,13 +41,9 @@ export default class ShowList extends Component {
                 </Link>
             ))}
             </div>
-            <Link to={{
-                pathname: `/artist/${this.props.artist.id}/shows/new`,
-                // artist: {
-                //     id: this.props.artist.id
-                // }
-            }}>Add a New Show Listing</Link>
-            <p>{this.props.artist.id}</p>
+            <Link to={`/artist/${this.props.artist.id}/shows/new`}>
+                Add a New Show Listing
+            </Link>
         </div>
         );
     }

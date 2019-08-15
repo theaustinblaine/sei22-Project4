@@ -31,11 +31,14 @@ export default class MerchandiseList extends Component {
         return (
         <div>
             <h3>Merchandise:</h3>
-            {this.state.merchandiseList.map(merch => (
-                <Link to={`/merchandise/${merch.id}`}>
-                    <img src={merch.photo_url} alt={merch.name} width="150" height="" />
-                </Link>
-            ))}
+            <div>
+                {this.state.merchandiseList.map(merch => (
+                    <Link to={`/artist/${this.props.artist.id}/merchandise/${merch.id}`}>
+                        <img src={merch.photo_url} alt={merch.name} width="150" height="" />
+                    </Link>
+                ))}
+            </div>
+            <Link to={`/artist/${this.props.artist.id}/merchandise/new`}>Add a New Piece of Merchandise</Link>
         </div>
         );
     }

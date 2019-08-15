@@ -5,6 +5,7 @@ import Artist from "./components/Artist.jsx";
 import MerchandiseDetail from "./components/MerchandiseDetail.jsx";
 import ShowDetail from "./components/ShowDetail.jsx";
 import ShowForm from "./components/ShowForm.jsx"
+import MerchandiseForm from "./components/MerchandiseForm.jsx";
 import "./App.css";
 
 class App extends Component {
@@ -23,8 +24,9 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={ArtistList}/>
                         <Route path="/artist/:id/shows/new" component={ShowForm} />
+                        <Route path="/artist/:id/merchandise/new" component={MerchandiseForm} />
+                        <Route path="/artist/:id/merchandise/:id" component={MerchandiseDetail} />
                         <Route path="/artist/:id" component={Artist}/>
-                        <Route path="/merchandise/:id" component={MerchandiseDetail} />
                         <Route path="/shows/:id" component={ShowDetail} />
                     </Switch>
                 </div>

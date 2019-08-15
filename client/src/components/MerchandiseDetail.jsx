@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
+
 import Axios from 'axios';
 
 export default class MerchandiseDetail extends Component {
     state = {
         error: '',
-        merchandise: []
+        merchandise: [],
+        redirectToHome: false
     }
 
     componentDidMount() {
@@ -22,12 +25,25 @@ export default class MerchandiseDetail extends Component {
         }
     }
 
+    handleDeleteMerchandise = () => {
+        Axios.delete(`/api/v1/merchandise/${this.props.match.params.id}/`, this.state.merchandise)
+        .then(() => {
+            this.setState({
+                redirectToHome: true
+            })
+        })
+    }
+
     render() {
+        if(this.state.redirectToHome) {
+            return <Redirect to="/" />
+        }
         return (
         <div>
             <h3>{this.state.merchandise.name}</h3>
             <img src={this.state.merchandise.photo_url} alt={this.state.merchandise.name} width="450" />
             <p>{this.state.merchandise.description}</p>
+            <button onClick={this.handleDeleteMerchandise}>Delete This Merch Listing</button>
         </div>
         );
     }

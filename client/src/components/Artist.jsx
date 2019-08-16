@@ -140,7 +140,6 @@ export default class Artist extends Component {
             <p>{this.state.artist.location}</p>
             <img src={this.state.artist.photo_url} alt={this.state.artist.name} width="450" />
             <p>{this.state.artist.bio}</p>
-            {/* <Link to={`/artist/${this.state.artist.id}/edit`}>Edit this Artist Listing</Link> */}
             <button onClick={this.handleToggleEditForm}>Edit This Artist Listing</button>
             <button onClick={this.handleDeleteArtist}>Delete this Artist Listing</button>
             <MerchandiseList 

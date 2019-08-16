@@ -28,11 +28,14 @@ export default class MerchandiseList extends Component {
         if (this.state.error){
             return <div>{this.state.error}</div>
         }
+
+        const artistMerchandise = this.state.merchandiseList.filter(merch => merch.artist === this.props.artist.id)
+        
         return (
         <div>
             <h3>Merchandise:</h3>
             <div>
-                {this.state.merchandiseList.map(merch => (
+                {artistMerchandise.map(merch => (
                     <Link to={`/artist/${this.props.artist.id}/merchandise/${merch.id}`}>
                         <img src={merch.photo_url} alt={merch.name} width="150" height="" />
                     </Link>

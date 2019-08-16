@@ -18,7 +18,6 @@ export default class ShowList extends Component {
             const res = await axios.get(`/api/v1/shows/`)
             this.setState({
                 showsList: res.data,
-                // artist: this.props.artist
             })
         }
         catch (err) {
@@ -31,15 +30,18 @@ export default class ShowList extends Component {
         if (this.state.error){
             return <div>{this.state.error}</div>
         }
+
+        const artistShows = this.state.showsList.filter(show => show.artist === this.props.artist.id)
+
         return (
         <div>
             <h3>Shows:</h3>
             <div>
-            {this.state.showsList.map(show => (
-                <Link to={`/artist/:id/shows/${show.id}`}>
+            {artistShows.map(show => (
+                    <Link to={`/artist/:id/shows/${show.id}`}>
                     <img src={show.flyer_url} alt="" width="150" height="200" />
                     <p>{show.date}</p>
-                </Link>
+                    </Link>
             ))}
             </div>
             <Link to={`/artist/${this.props.artist.id}/shows/new`}>

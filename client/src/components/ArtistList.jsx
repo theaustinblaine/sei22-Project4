@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 export default class ArtistList extends Component {
     state = {
         error: '',
@@ -30,20 +38,35 @@ export default class ArtistList extends Component {
         return (
         <div>
             <h2>All Artists</h2>
-            <div>
-                {this.state.artists.map(artist => (
-                    <div key={artist.id}>
-                        <Link to={`/artist/${artist.id}`} >
-                            <h3>{artist.name}</h3>
-                            <img src={artist.photo_url} alt={artist.name} width="400" />
-                        </Link>
-                    </div>
-                ))}
-            </div>
             <Link to={`/artist/new/`}>
                 Add a New Artist Listing
             </Link>
+            <div className="artist-list">
+                {this.state.artists.map(artist => (
+                    <Card className="artist-card" key={artist.id}>
+                        <CardActionArea>
+                            <Link to={`/artist/${artist.id}`} >
+                                <CardMedia
+                                    component="img"
+                                    alt={artist.name}
+                                    image={artist.photo_url}
+                                    title={artist.name}
+                                />
+                                <CardContent className="card-content">
+                                    <Typography gutterBottom variant="h6" component="p">
+                                        {artist.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        {artist.location}
+                                    </Typography>
+                                </CardContent>
+                            </Link>
+                        </CardActionArea>
+                    </Card>
+                ))}
+            </div>
         </div>
+
         );
     }
 }

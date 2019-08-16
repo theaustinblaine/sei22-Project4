@@ -31,3 +31,18 @@
     transform: rotate(360deg);
   }
 }
+
+.artist-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.artist-card {
+  max-width: 300px;
+  margin: 30px 20px;
+}
+
+.card-content {
+  /* background: #61dafb; */
+}

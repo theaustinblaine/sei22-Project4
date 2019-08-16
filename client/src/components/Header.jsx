@@ -32,7 +32,7 @@ export default function DenseAppBar() {
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <Typography variant="h6" color="inherit">
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-                indiEPK
+                iPK
             </Link>
                 </Typography>
             </IconButton>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-
 import axios from 'axios'
 
 export default class ShowList extends Component {
@@ -16,9 +15,7 @@ export default class ShowList extends Component {
     fetchShows = async () => {
         try {
             const res = await axios.get(`/api/v1/shows/`)
-            this.setState({
-                showsList: res.data,
-            })
+            this.setState({showsList: res.data})
         }
         catch (err) {
             console.log(err)

@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom'
 
 import Axios from 'axios';
 
+import TextField from '@material-ui/core/TextField';
+
 export default class MerchandiseForm extends Component {
     state = {
         newMerchandise: {
@@ -45,36 +47,39 @@ export default class MerchandiseForm extends Component {
         return (
         <form onSubmit={this.handleSubmit}>
             <div>
-                <label htmlFor="merch-name">Merchandise Name:</label>
-                <input 
+                <TextField
                     id="merch-name"
-                    type="text"
+                    label="Name"
+                    className=""
                     name="name"
                     onChange={this.handleChange}
                     value={this.state.newMerchandise.name}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="merch-photo_url">Photo URL:</label>
-                <input 
+                <TextField
                     id="merch-photo_url"
-                    type="text"
+                    label="Image URL"
+                    className=""
                     name="photo_url"
                     onChange={this.handleChange}
                     value={this.state.newMerchandise.photo_url}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="merch-description">Description</label>
-                <textarea 
-                    name="description" 
+                <TextField
                     id="merch-description"
-                    onChange={this.handleChange} 
-                    cols="30" 
-                    rows="10"
-                >
-                    {this.state.newMerchandise.description}
-                </textarea>
+                    label="Description"
+                    multiline
+                    rowsMax="4"
+                    name="description"
+                    value={this.state.newMerchandise.description}
+                    onChange={this.handleChange}
+                    className=""
+                    margin="normal"
+                />
             </div>
             <input type="submit" value="Add New Merchandise Listing"/>
         </form>

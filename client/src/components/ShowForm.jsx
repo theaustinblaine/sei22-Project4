@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
+import Axios from 'axios';
 
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
-import Axios from 'axios';
 
 
 export default class ShowForm extends Component {
@@ -54,6 +54,7 @@ export default class ShowForm extends Component {
                     id="show-lineup"
                     label="Lineup"
                     className=""
+                    name="lineup"
                     onChange={this.handleChange}
                     value={this.state.newShow.lineup}
                     margin="normal"
@@ -64,6 +65,7 @@ export default class ShowForm extends Component {
                     id="show-flyer-url"
                     label="Flyer image"
                     className=""
+                    name="flyer_url"
                     onChange={this.handleChange}
                     value={this.state.newShow.flyer_url}
                     margin="normal"
@@ -74,6 +76,7 @@ export default class ShowForm extends Component {
                     id="show-date"
                     label="Date"
                     className=""
+                    name="date"
                     onChange={this.handleChange}
                     value={this.state.newShow.date}
                     margin="normal"
@@ -84,6 +87,7 @@ export default class ShowForm extends Component {
                     id="standard-name"
                     label="Venue"
                     className=""
+                    name="venue"
                     onChange={this.handleChange}
                     value={this.state.newShow.venue}
                     margin="normal"
@@ -94,6 +98,7 @@ export default class ShowForm extends Component {
                 <InputLabel htmlFor="show-cost">Cost</InputLabel>
                 <Input
                 id="show-cost"
+                name="cost"
                 onChange={this.handleChange}
                 value={this.state.newShow.cost}
                 startAdornment={<InputAdornment position="start">$</InputAdornment>}

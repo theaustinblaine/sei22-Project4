@@ -20,12 +20,7 @@ export default function DenseAppBar() {
     const classes = useStyles();
 
         return (
-        // <div>
-        //     <h1>indiEPK</h1>
-        //     <div>
-        //         <div><Link to="/">All Artists</Link></div>
-        //     </div>
-        // </div>
+        
         <div className={classes.root}>
         <AppBar position="static">
             <Toolbar variant="dense">

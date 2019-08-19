@@ -4,6 +4,11 @@ import MerchandiseList from './MerchandiseList.jsx'
 import ShowList from './ShowList.jsx';
 import { Redirect} from 'react-router-dom'
 
+// import container component
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+
 export default class Artist extends Component {
     state = {
         error: '',
@@ -139,7 +144,13 @@ export default class Artist extends Component {
             <h2>{this.state.artist.name}</h2>
             <p>{this.state.artist.location}</p>
             <img src={this.state.artist.photo_url} alt={this.state.artist.name} width="450" />
-            <p>{this.state.artist.bio}</p>
+            <React.Fragment>
+                <CssBaseline />
+                <Container maxWidth="sm">
+                    <Typography component="div" />
+                    <p>{this.state.artist.bio}</p>
+                </Container>
+            </React.Fragment>
             <button onClick={this.handleToggleEditForm}>Edit This Artist Listing</button>
             <button onClick={this.handleDeleteArtist}>Delete this Artist Listing</button>
             <MerchandiseList 

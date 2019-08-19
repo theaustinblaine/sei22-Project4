@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom'
 
 import Axios from 'axios';
 
+import TextField from '@material-ui/core/TextField';
+
 export default class ArtistForm extends Component {
     state = {
         newArtist: {
@@ -46,56 +48,61 @@ export default class ArtistForm extends Component {
         return (
         <form onSubmit={this.handleSubmit}>
             <div>
-                <label htmlFor="artist-name">Artist Name:</label>
-                <input 
+                <TextField
                     id="artist-name"
-                    type="text"
+                    label="Name"
+                    className=""
                     name="name"
                     onChange={this.handleChange}
                     value={this.state.newArtist.name}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="artist-photo">Photo URL:</label>
-                <input 
+                <TextField
                     id="artist-photo"
-                    type="text"
+                    label="Photo URL"
+                    className=""
                     name="photo_url"
                     onChange={this.handleChange}
                     value={this.state.newArtist.photo_url}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="artist-location">Location:</label>
-                <input 
+                <TextField
                     id="artist-location"
-                    type="text"
+                    label="Location"
+                    className=""
                     name="location"
                     onChange={this.handleChange}
                     value={this.state.newArtist.location}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="artist-genre">Genre:</label>
-                <input 
+                <TextField
                     id="artist-genre"
-                    type="text" 
-                    name="genre" 
+                    label="Genre(s)"
+                    className=""
+                    name="genre"
                     onChange={this.handleChange}
                     value={this.state.newArtist.genre}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="artist-bio">Bio:</label>
-                <textarea 
-                    name="bio" 
-                    id="artist-bio" 
-                    cols="30" 
-                    rows="10"
+                <TextField
+                    id="artist-bio"
+                    label="Bio"
+                    multiline
+                    rowsMax="6"
+                    name="bio"
+                    value={this.state.newArtist.bio}
                     onChange={this.handleChange}
-                >
-                    {this.state.newArtist.bio}
-                </textarea>
+                    className=""
+                    margin="normal"
+                />
             </div>
             <input type="submit" value="Create New Artist Listing"/>
         </form>

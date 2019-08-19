@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardMedia from '@material-ui/core/CardMedia';
+
+
 export default class ShowList extends Component {
     state = {
         error: '',
@@ -34,12 +39,26 @@ export default class ShowList extends Component {
         return (
         <div>
             <h3>Shows:</h3>
+            <div className="show-list">
             {artistShows.map(show => (
                     <Link to={`/artist/:id/shows/${show.id}`}>
-                    <img src={show.flyer_url} alt="" width="150" height="200" />
-                    <p>{show.date}</p>
+                        <Card className="show-card">
+                        <CardActionArea>
+                        <CardMedia
+                            component="img"
+                            alt={show.date}
+                            height="140"
+                            image={show.flyer_url}
+                            title="Contemplative Reptile"
+                        />
+                        </CardActionArea>
+                    </Card>
+
+                    {/* <img src={show.flyer_url} alt="" width="150" height="200" />
+                    <p>{show.date}</p> */}
                     </Link>
             ))}
+            </div>
             <Link to={`/artist/${this.props.artist.id}/shows/new`}>
                 Add a New Show Listing
             </Link>

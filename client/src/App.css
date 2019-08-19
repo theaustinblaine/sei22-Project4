@@ -70,3 +70,15 @@
   width: 150px;
   margin: 10px;
 }
+
+.show-list{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 550px;
+}
+
+.show-card {
+  width: 150px;
+  margin: 10px;
+}

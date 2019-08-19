@@ -3,6 +3,12 @@ import { Redirect } from 'react-router-dom'
 
 import Axios from 'axios';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+
+import Button from '@material-ui/core/Button';
+
 export default class ShowDetail extends Component {
     state = {
         error: '',
@@ -41,12 +47,13 @@ export default class ShowDetail extends Component {
         }
         return (
         <div>
-            <img src={this.state.show.flyer_url} alt={this.state.show.lineup} width="450"/>
+            <img src={this.state.show.flyer_url} alt={this.state.show.lineup} height="450" className="detail-photo" />
+            <hr />
             <h4>Who? {this.state.show.lineup}</h4>
             <p>When? {this.state.show.date}</p>
             <p>Where? {this.state.show.venue}</p>
             <p>How Much? {this.state.show.cost}</p>
-            <button onClick={this.handleDeleteShow}>Delete This Show Listing</button>
+            <Button color="secondary" onClick={this.handleDeleteShow}>Delete This Show Listing</Button>
         </div>
         );
     }

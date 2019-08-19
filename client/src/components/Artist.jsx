@@ -11,6 +11,8 @@ import Container from '@material-ui/core/Container';
 
 import Button from '@material-ui/core/Button';
 
+import Grid from '@material-ui/core/Grid';
+
 export default class Artist extends Component {
     state = {
         error: '',
@@ -147,7 +149,7 @@ export default class Artist extends Component {
             <h2>{this.state.artist.name}</h2>
             <hr />
             <p>{this.state.artist.location}</p>
-            <img src={this.state.artist.photo_url} alt={this.state.artist.name} width="450"  className="artist-photo" />
+            <img src={this.state.artist.photo_url} alt={this.state.artist.name} width="450"  className="detail-photo" />
             <React.Fragment>
                 <CssBaseline />
                 <Container maxWidth="sm">
@@ -161,12 +163,23 @@ export default class Artist extends Component {
             <Button color="primary" onClick={this.handleToggleEditForm}>Edit This Artist Listing</Button>
             <Button color="secondary" onClick={this.handleDeleteArtist}>Delete this Artist Listing</Button>
             <hr />
-            <MerchandiseList 
-                artist={this.state.artist}
-            />
-            <ShowList 
-                artist={this.state.artist}
-            />
+            
+            <Grid container className="" spacing={2}>
+                <Grid item xs={12}>
+                    <Grid container justify="space-around" spacing={2}>
+                        <Grid item>
+                            <MerchandiseList 
+                                artist={this.state.artist}
+                            />
+                        </Grid>
+                        <Grid item>
+                        <ShowList 
+                            artist={this.state.artist}
+                        />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
         </div>
 
         );

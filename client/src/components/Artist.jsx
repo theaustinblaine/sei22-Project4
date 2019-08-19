@@ -13,6 +13,9 @@ import Button from '@material-ui/core/Button';
 
 import Grid from '@material-ui/core/Grid';
 
+import TextField from '@material-ui/core/TextField';
+
+
 export default class Artist extends Component {
     state = {
         error: '',
@@ -91,56 +94,61 @@ export default class Artist extends Component {
             <h3>Artist Edit Form</h3>
             <form onSubmit={this.handleSubmit}>
                 <div>
-                    <label htmlFor="artist-name">Artist Name:</label>
-                    <input 
-                        id="artist-name"
-                        type="text"
-                        name="name"
-                        onChange={this.handleChange}
-                        value={this.state.artist.name}
-                    />
+                    <TextField
+                    id="artist-name"
+                    label="Name"
+                    className=""
+                    name="name"
+                    onChange={this.handleChange}
+                    value={this.state.artist.name}
+                    margin="normal"
+                />
                 </div>
                 <div>
-                    <label htmlFor="artist-photo">Photo URL:</label>
-                    <input 
-                        id="artist-photo"
-                        type="text"
-                        name="photo_url"
-                        onChange={this.handleChange}
-                        value={this.state.artist.photo_url}
-                    />
+                    <TextField
+                    id="artist-photo"
+                    label="Photo URL"
+                    className=""
+                    name="photo_url"
+                    onChange={this.handleChange}
+                    value={this.state.artist.photo_url}
+                    margin="normal"
+                />
                 </div>
                 <div>
-                    <label htmlFor="artist-location">Location:</label>
-                    <input 
-                        id="artist-location"
-                        type="text"
-                        name="location"
-                        onChange={this.handleChange}
-                        value={this.state.artist.location}
-                    />
+                    <TextField
+                    id="artist-location"
+                    label="Location"
+                    className=""
+                    name="location"
+                    onChange={this.handleChange}
+                    value={this.state.artist.location}
+                    margin="normal"
+                />
                 </div>
                 <div>
-                    <label htmlFor="artist-genre">Genre:</label>
-                    <input 
-                        id="artist-genre"
-                        type="text" 
-                        name="genre" 
-                        onChange={this.handleChange}
-                        value={this.state.artist.genre}
-                    />
+                    <TextField
+                    id="artist-genre"
+                    label="Genre(s)"
+                    className=""
+                    name="genre"
+                    onChange={this.handleChange}
+                    value={this.state.artist.genre}
+                    margin="normal"
+                />
                 </div>
                 <div>
-                    <label htmlFor="artist-bio">Bio:</label>
-                    <textarea 
-                        name="bio" 
-                        id="artist-bio" 
-                        cols="30" 
-                        rows="10"
-                        onChange={this.handleChange}
-                    >
-                        {this.state.artist.bio}
-                    </textarea>
+                    <TextField
+                    id="artist-bio"
+                    label="Bio"
+                    multiline
+                    rowsMax="6"
+                    name="bio"
+                    value={this.state.artist.bio}
+                    onChange={this.handleChange}
+                    className=""
+                    margin="normal"
+                />
                 </div>
                 <input type="submit" value="Update This Artist Listing"/>
             </form>

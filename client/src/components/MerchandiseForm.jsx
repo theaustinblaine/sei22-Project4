@@ -14,6 +14,10 @@ export default class MerchandiseForm extends Component {
         redirectToHome: false
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     handleChange = (evt) => {
         let copiedMerchandise = {...this.state.newMerchandise}
 

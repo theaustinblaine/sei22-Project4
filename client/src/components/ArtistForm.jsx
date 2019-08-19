@@ -15,6 +15,10 @@ export default class ArtistForm extends Component {
         redirectToHome: false
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     handleChange = (evt) => {
         let copiedArtist = {...this.state.newArtist}
 

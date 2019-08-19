@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
 import Axios from 'axios';
+
 
 export default class ShowForm extends Component {
     state = {
@@ -41,56 +47,58 @@ export default class ShowForm extends Component {
             return <Redirect to="/" />
         }
         return (
-        <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
+            <h2>Add a New Show</h2> 
             <div>
-                <label htmlFor="show-lineup">Lineup:</label>
-                <input 
+                <TextField
                     id="show-lineup"
-                    type="text"
-                    name="lineup"
+                    label="Lineup"
+                    className=""
                     onChange={this.handleChange}
                     value={this.state.newShow.lineup}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="show-flyer-url">Flyer Image URL:</label>
-                <input 
+                <TextField
                     id="show-flyer-url"
-                    type="text"
-                    name="flyer_url"
+                    label="Flyer image"
+                    className=""
                     onChange={this.handleChange}
                     value={this.state.newShow.flyer_url}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="show-date">Date:</label>
-                <input 
+                <TextField
                     id="show-date"
-                    type="text"
-                    name="date"
+                    label="Date"
+                    className=""
                     onChange={this.handleChange}
                     value={this.state.newShow.date}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="show-venue">Venue:</label>
-                <input 
-                    id="show-venue"
-                    type="text"
-                    name="venue"
+                <TextField
+                    id="standard-name"
+                    label="Venue"
+                    className=""
                     onChange={this.handleChange}
                     value={this.state.newShow.venue}
+                    margin="normal"
                 />
             </div>
             <div>
-                <label htmlFor="show-cost">Cost:</label>
-                <input 
-                    id="show-cost"
-                    type="text" 
-                    name="cost"
-                    onChange={this.handleChange}
-                    value={this.state.newShow.cost}
+                <FormControl width="300" className="">
+                <InputLabel htmlFor="show-cost">Cost</InputLabel>
+                <Input
+                id="show-cost"
+                onChange={this.handleChange}
+                value={this.state.newShow.cost}
+                startAdornment={<InputAdornment position="start">$</InputAdornment>}
                 />
+                </FormControl>
             </div>
             <input type="submit" value="Add New Show Listing"/>
         </form>

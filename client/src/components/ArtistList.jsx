@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+
 // Card component imports
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -17,6 +18,7 @@ export default class ArtistList extends Component {
 
     componentDidMount() {
         this.fetchArtists()
+        window.scrollTo(0, 0)
     }
 
     fetchArtists = async () => {

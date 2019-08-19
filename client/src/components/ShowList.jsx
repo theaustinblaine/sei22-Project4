@@ -10,6 +10,7 @@ export default class ShowList extends Component {
 
     componentDidMount() {
         this.fetchShows()
+        window.scrollTo(0, 0)
     }
 
     fetchShows = async () => {

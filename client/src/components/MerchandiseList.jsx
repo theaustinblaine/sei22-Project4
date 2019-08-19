@@ -11,6 +11,7 @@ export default class MerchandiseList extends Component {
 
     componentDidMount() {
         this.fetchAllMerchandise()
+        window.scrollTo(0, 0)
     }
 
     fetchAllMerchandise = async () => {

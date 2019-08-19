@@ -9,6 +9,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
+import Button from '@material-ui/core/Button';
+
 export default class Artist extends Component {
     state = {
         error: '',
@@ -21,6 +23,7 @@ export default class Artist extends Component {
 
     componentDidMount() {
         this.fetchArtist(this.props.match.params.id)
+        window.scrollTo(0, 0)
     }
 
     fetchArtist = async () => {
@@ -142,6 +145,7 @@ export default class Artist extends Component {
         </div>
         :<div>
             <h2>{this.state.artist.name}</h2>
+            <hr />
             <p>{this.state.artist.location}</p>
             <img src={this.state.artist.photo_url} alt={this.state.artist.name} width="450"  className="artist-photo" />
             <React.Fragment>
@@ -151,8 +155,12 @@ export default class Artist extends Component {
                     <p>{this.state.artist.bio}</p>
                 </Container>
             </React.Fragment>
-            <button onClick={this.handleToggleEditForm}>Edit This Artist Listing</button>
-            <button onClick={this.handleDeleteArtist}>Delete this Artist Listing</button>
+
+
+            <hr />
+            <Button color="primary" onClick={this.handleToggleEditForm}>Edit This Artist Listing</Button>
+            <Button color="secondary" onClick={this.handleDeleteArtist}>Delete this Artist Listing</Button>
+            <hr />
             <MerchandiseList 
                 artist={this.state.artist}
             />

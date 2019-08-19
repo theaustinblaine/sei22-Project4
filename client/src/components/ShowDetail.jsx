@@ -12,6 +12,7 @@ export default class ShowDetail extends Component {
 
     componentDidMount() {
         this.fetchShow()
+        window.scrollTo(0, 0)
 }
 
     fetchShow = async () => {

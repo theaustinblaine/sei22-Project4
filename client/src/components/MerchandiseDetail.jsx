@@ -12,6 +12,7 @@ export default class MerchandiseDetail extends Component {
 
     componentDidMount() {
         this.fetchMerchandise()
+        window.scrollTo(0, 0)
     }
 
     fetchMerchandise = async () => {

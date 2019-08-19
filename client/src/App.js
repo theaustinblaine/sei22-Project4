@@ -21,10 +21,11 @@ class App extends Component {
             <Router>
                 <div className="App">
                     <Header />
-                    
+                    <div className="content">
                     <React.Fragment>
                         <CssBaseline />
                         <Container fixed>
+                            <Typography component="div" style={{height: '100vh' }}>
                             <Switch>
                                 <Route exact path="/" component={ArtistList}/>
                                 <Route path="/artist/new" component={ArtistForm} />
@@ -35,9 +36,10 @@ class App extends Component {
                                 <Route path="/artist/:id/merchandise/:id" component={MerchandiseDetail} />
                                 <Route path="/artist/:id" component={Artist}/>
                             </Switch>
-                            <Typography component="div" />
+                            </Typography>
                         </Container>
                     </React.Fragment>
+                    </div>
                 </div>
             </Router>
         );

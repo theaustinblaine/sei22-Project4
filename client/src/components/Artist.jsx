@@ -143,7 +143,7 @@ export default class Artist extends Component {
         :<div>
             <h2>{this.state.artist.name}</h2>
             <p>{this.state.artist.location}</p>
-            <img src={this.state.artist.photo_url} alt={this.state.artist.name} width="450" />
+            <img src={this.state.artist.photo_url} alt={this.state.artist.name} width="450"  className="artist-photo" />
             <React.Fragment>
                 <CssBaseline />
                 <Container maxWidth="sm">

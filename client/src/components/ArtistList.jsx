@@ -36,7 +36,23 @@ export default class ArtistList extends Component {
         }
         return (
         <div>
-            <h2>All Artists</h2>
+            <h1>indiEPK</h1>
+            <hr/>
+            <p>indiEPK is a resource for artists and fans to keep up with and discover artists around the world without having to fight through the flood of social media.
+                Historically, press kits have been a tool for an artist to showcase anything relevent that they may be working on or have recently done.
+                With the rise in internet popularity, the music business turned to electronic press kits, or EPK's. Now with the rise of social media, EPK's have fallen to the wayside.
+                While social media is a great tool for artist to fan interaction, we've lost the plot in a sense, which is artists doing what artists do: create.
+                <br/>
+                <br/>
+                At indiEPK, we want to find that missing link and offer up a way for artists to present themselves in a clean and effective manner without the fuzz of social currency.
+                Whether you're a listener just looking to see which artists in your city you should be keeping an eye on, or you're another artist planning a tour and looking for networking opportunities.
+                We want to provide the most simple platform for music business without the hassle of the music business.
+                <br/>
+                <br/>
+                Click on an artist below to see what we're all about!
+            </p>
+
+
             <Link to={`/artist/new/`}>
                 Add a New Artist Listing
             </Link>

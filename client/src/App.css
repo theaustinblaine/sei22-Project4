@@ -32,6 +32,14 @@
   }
 }
 
+.nav{
+  position: fixed;
+}
+
+.content{
+  margin-top: 130px;
+}
+
 .artist-list {
   display: flex;
   flex-wrap: wrap;
@@ -44,4 +52,9 @@
 }
 
 .card-content {
+}
+
+.artist-photo {
+  border: black 1px solid;
+  border-radius: 3px;
 }

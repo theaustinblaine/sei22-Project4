@@ -22,7 +22,7 @@ export default function DenseAppBar() {
         return (
         
         <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="fixed" className="nav">
             <Toolbar variant="dense">
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <Typography variant="h6" color="inherit">

@@ -58,3 +58,15 @@
   border: black 1px solid;
   border-radius: 3px;
 }
+
+.merch-list{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 550px;
+}
+
+.merch-card {
+  width: 150px;
+  margin: 10px;
+}

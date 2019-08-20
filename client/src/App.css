@@ -48,6 +48,7 @@ a {
 .nav{
   position: fixed;
   /* background-color: #BB86FC; */
+  max-height: 10px;
 }
 
 .navbar{
@@ -57,7 +58,7 @@ a {
 }
 
 .content{
-  margin-top: 130px;
+  margin-top: 80px;
 }
 
 .create-button {

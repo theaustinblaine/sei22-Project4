@@ -43,6 +43,7 @@ export default class ArtistList extends Component {
         <div>
             <h1>indiEPK</h1>
             <hr/>
+            <br />
             <p>indiEPK is a resource for artists and fans to keep up with and discover artists around the world without having to fight through the flood of social media.
                 Historically, press kits have been a tool for an artist to showcase anything relevent that they may be working on or have recently done.
                 With the rise in internet popularity, the music business turned to electronic press kits, or EPK's. Now with the rise of social media, EPK's have fallen to the wayside.
@@ -56,8 +57,9 @@ export default class ArtistList extends Component {
                 <br/>
                 Click on an artist below to see what we're all about!
             </p>
-
-
+            <br />
+            <hr />
+            <br />
             <Link to={`/artist/new/`} >
             <Button color="#03DAC6" variant="contained" className="create-button">Add a New Artist Listing</Button>
             </Link>
@@ -71,6 +73,7 @@ export default class ArtistList extends Component {
                                     alt={artist.name}
                                     image={artist.photo_url}
                                     title={artist.name}
+                                    className="artist-photo"
                                 />
                                 <CardContent className="card-content">
                                     <Typography gutterBottom variant="h6" component="p">

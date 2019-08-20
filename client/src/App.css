@@ -81,6 +81,10 @@ a {
   margin: 30px 20px;
 }
 
+.artist-photo {
+  height: 300px;
+}
+
 .card-content {
   max-height: 100px;
   /* color: greenyellow; */

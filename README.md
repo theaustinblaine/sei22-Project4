@@ -6,7 +6,7 @@ indiEPK is a resource for artists and fans to keep up with and discover artists 
 At indiEPK, we want to find that missing link and offer up a way for artists to present themselves in a clean and effective manner without the fuzz of social currency. Whether you're a listener just looking to see which artists in your city you should be keeping an eye on, or you're another artist planning a tour and looking for networking opportunities. We want to provide the most simple platform for music business without the hassle of the music business.
 
 * [Deployed App](https://indiepk.herokuapp.com/)
-* [Project Board]()
+* [Project Board](https://trello.com/b/jPOu4Dbw/sei22-project-4)
 
 ## Technologies Used:
 * React

@@ -1,5 +1,18 @@
 .App {
   text-align: center;
+  /* background-color: #121212; */
+  color: #FFFFFF
+}
+
+body {
+  background-color: #121212;
+  color: #FFFFFF
+
+}
+
+a {
+  text-decoration: none;
+  color: #03DAC6
 }
 
 .App-logo {
@@ -34,10 +47,22 @@
 
 .nav{
   position: fixed;
+  /* background-color: #BB86FC; */
+}
+
+.navbar{
+  /* background-color: #3700B3; */
+  background-color: #03DAC6;
+  color: #3700B3
 }
 
 .content{
   margin-top: 130px;
+}
+
+.create-button {
+  background-color: #03DAC6;
+  color: #03DAC6
 }
 
 .artist-list {

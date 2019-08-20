@@ -16,6 +16,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 
 
+
 export default class Artist extends Component {
     state = {
         error: '',
@@ -82,6 +83,7 @@ export default class Artist extends Component {
     }
 
     render() {
+        
         if (this.state.error){
             return <div>{this.state.error}</div>
         }
@@ -89,8 +91,9 @@ export default class Artist extends Component {
             return <Redirect to="/" />
         }
         return (
-        this.state.isEditFormDisplayed
-        ?<div>
+            this.state.isEditFormDisplayed
+        ?
+            <div>
             <h3>Artist Edit Form</h3>
             <form onSubmit={this.handleSubmit}>
                 <div>
@@ -168,7 +171,7 @@ export default class Artist extends Component {
 
 
             <hr />
-            <Button color="primary" onClick={this.handleToggleEditForm}>Edit This Artist Listing</Button>
+            <Button onClick={this.handleToggleEditForm}>Edit This Artist Listing</Button>
             <Button color="secondary" onClick={this.handleDeleteArtist}>Delete this Artist Listing</Button>
             <hr />
             
@@ -189,7 +192,7 @@ export default class Artist extends Component {
                 </Grid>
             </Grid>
         </div>
-
         );
     }
 }
+            // </MuiThemeProvider>

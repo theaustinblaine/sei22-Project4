@@ -6,6 +6,9 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 
+import Button from '@material-ui/core/Button';
+
+
 export default class MerchandiseList extends Component {
     state = {
         error: '',
@@ -57,7 +60,9 @@ export default class MerchandiseList extends Component {
                     </Link>
                 ))}
             </div>
-            <Link to={`/artist/${this.props.artist.id}/merchandise/new`}>Add a New Piece of Merchandise</Link>
+            <Link to={`/artist/${this.props.artist.id}/merchandise/new`}>
+                <Button color="#03DAC6" variant="contained" className="create-button">Add a New Piece of Merchandise</Button>
+            </Link>
         </div>
         );
     }

@@ -15,9 +15,19 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+
+const theme = createMuiTheme({
+    palette: {
+        type: 'dark',
+        },
+    });
+
 class App extends Component {
     render() {
         return (
+            <MuiThemeProvider theme={theme}>
             <Router>
                 <div className="App">
                     <Header />
@@ -42,6 +52,7 @@ class App extends Component {
                     </div>
                 </div>
             </Router>
+            </MuiThemeProvider>
         );
     }
 }

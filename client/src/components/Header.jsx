@@ -23,15 +23,18 @@ export default function DenseAppBar() {
         
         <div className={classes.root}>
         <AppBar position="fixed" className="nav">
-            <Toolbar variant="dense">
+            <Toolbar variant="dense" className="navbar">
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <Typography variant="h6" color="inherit">
-            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-                iPK
-            </Link>
+                    <h4>iPK</h4>
+            {/* <Link to="/" style={{ textDecoration: 'none', color: "black" }}>
+                HOME
+            </Link> */}
                 </Typography>
             </IconButton>
-            
+            <Link to="/" style={{ textDecoration: 'none', color: "black" }}>
+                HOME
+            </Link>
             </Toolbar>
         </AppBar>
         </div>

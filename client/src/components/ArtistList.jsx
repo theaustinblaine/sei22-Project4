@@ -10,6 +10,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
+import Button from '@material-ui/core/Button';
+
+
 export default class ArtistList extends Component {
     state = {
         error: '',
@@ -55,8 +58,8 @@ export default class ArtistList extends Component {
             </p>
 
 
-            <Link to={`/artist/new/`}>
-                Add a New Artist Listing
+            <Link to={`/artist/new/`} >
+            <Button color="#03DAC6" variant="contained" className="create-button">Add a New Artist Listing</Button>
             </Link>
             <div className="artist-list">
                 {this.state.artists.map(artist => (

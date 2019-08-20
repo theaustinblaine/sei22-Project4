@@ -6,6 +6,9 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 
+import Button from '@material-ui/core/Button';
+
+
 
 export default class ShowList extends Component {
     state = {
@@ -60,7 +63,7 @@ export default class ShowList extends Component {
             ))}
             </div>
             <Link to={`/artist/${this.props.artist.id}/shows/new`}>
-                Add a New Show Listing
+                <Button color="#03DAC6" variant="contained" className="create-button">Add a New Show Listing</Button>
             </Link>
         </div>
         );

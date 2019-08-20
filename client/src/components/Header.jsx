@@ -24,14 +24,9 @@ export default function DenseAppBar() {
         <div className={classes.root}>
         <AppBar position="fixed" className="nav">
             <Toolbar variant="dense" className="navbar">
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                <Typography variant="h6" color="inherit">
-                    <h4>iPK</h4>
-            {/* <Link to="/" style={{ textDecoration: 'none', color: "black" }}>
-                HOME
-            </Link> */}
-                </Typography>
-            </IconButton>
+            <Typography variant="h4" color="inherit" className="nav-logo">
+                <h4 className="nav-logo">iPK</h4>
+            </Typography>
             <Link to="/" style={{ textDecoration: 'none', color: "black" }}>
                 HOME
             </Link>

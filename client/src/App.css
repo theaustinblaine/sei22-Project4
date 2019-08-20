@@ -57,6 +57,10 @@ a {
   color: #3700B3
 }
 
+.nav-logo{
+  margin-right: 20px;
+}
+
 .content{
   margin-top: 80px;
 }

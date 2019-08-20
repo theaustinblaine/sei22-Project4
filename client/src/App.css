@@ -82,6 +82,8 @@ a {
 }
 
 .card-content {
+  max-height: 100px;
+  /* color: greenyellow; */
 }
 
 .detail-photo {

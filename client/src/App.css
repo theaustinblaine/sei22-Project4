@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  /* background-color: #121212; */
   color: #FFFFFF
 }
 
@@ -47,12 +46,10 @@ a {
 
 .nav{
   position: fixed;
-  /* background-color: #BB86FC; */
   max-height: 10px;
 }
 
 .navbar{
-  /* background-color: #3700B3; */
   background-color: #03DAC6;
   color: #3700B3
 }
@@ -87,7 +84,6 @@ a {
 
 .card-content {
   max-height: 100px;
-  /* color: greenyellow; */
 }
 
 .detail-photo {

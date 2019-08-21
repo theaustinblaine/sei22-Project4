@@ -195,4 +195,3 @@ export default class Artist extends Component {
         );
     }
 }
-            // </MuiThemeProvider>

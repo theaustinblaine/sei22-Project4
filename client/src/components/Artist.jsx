@@ -105,7 +105,7 @@ export default class Artist extends Component {
                     onChange={this.handleChange}
                     value={this.state.artist.name}
                     margin="normal"
-                />
+                    />
                 </div>
                 <div>
                     <TextField
